@@ -29,11 +29,14 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
       aria-labelledby="editTask"
       onClick={(e) => {e.target === e.currentTarget && closeEditMode()}}
       >
+      
       <form
         className="todo"
         onSubmit={handleFormSubmit}
         >
+      
         <div className="wrapper">
+          
           <input
             type="text"
             id="editTask"
@@ -51,13 +54,15 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
           >Update Task</label>
         </div>
         <button
-          className="btn"
+          className="btn first-btn btn-first"
           aria-label={`Confirm edited task to now read ${updatedTaskName}`}
           type="submit"
           >
           <CheckIcon strokeWidth={2} height={24} width={24} />
         </button>
+        
       </form>
+   
     </div>
   )
 }

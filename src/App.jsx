@@ -7,6 +7,7 @@ import useLocalStorage from './hooks/useLocalStorage'
 import CustomForm from './components/CustomForm'
 import EditForm from './components/EditForm'
 import TaskList from './components/TaskList'
+import Navbar from './components/Navbar'
 
 function App() {
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
@@ -55,37 +56,41 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <header>
-        <div className="header-img">
-          <img src="/src/assets/header-img.png" alt="todonote" />
+    <>
+    <Navbar />
+
+    <div className="grid-to-do">
+        <div className="container">
+          <header>
+            <div className="header-img">
+              <img src="/src/assets/header-img.png" alt="todonote" />
+            </div>
+            <div className="header-info">
+              <h1>TO-DO-<span>LIST</span></h1>
+              <p>เขียนโค๊ด</p>
+            </div>
+          </header>
+          <div className="card">
+            {isEditing && (
+              <EditForm
+                editedTask={editedTask}
+                updateTask={updateTask}
+                closeEditMode={closeEditMode} />
+            )}
+            <CustomForm addTask={addTask} />
+            {tasks && (
+              <TaskList
+                tasks={tasks}
+                deleteTask={deleteTask}
+                toggleTask={toggleTask}
+                enterEditMode={enterEditMode} />
+            )}
+          </div>
         </div>
-        <div className="header-info">
-            <h1>TO-DO-<span>LIST</span></h1>
-            <p>เขียนโค๊ด</p>
-        </div>
-      </header>
-      <div className="card">
-        {
-          isEditing && (
-            <EditForm
-              editedTask={editedTask}
-              updateTask={updateTask}
-              closeEditMode={closeEditMode}
-            />
-          )
-        }
-        <CustomForm addTask={addTask}/>
-        {tasks && (
-          <TaskList
-            tasks={tasks}
-            deleteTask={deleteTask}
-            toggleTask={toggleTask}
-            enterEditMode={enterEditMode}
-          />
-        )}
-      </div>
+        
     </div>
+    
+    </>
   )
 }
 

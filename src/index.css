@@ -64,6 +64,37 @@ label {
   color-scheme: dark;
 }
 
+.nav-container{
+  max-width: 1440px;
+  margin-inline: auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  background-color: #1B1919;
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+}
+
+
+
+  .nav-menu{
+    display: flex;
+    align-items: center;
+  }
+ .nav-menu  li{
+    margin-left: 1rem;
+    list-style: none;
+    font-size: 24px;
+  }
+
+
+
 
 @media screen and (max-width: 768px) {
   :root {
@@ -79,14 +110,19 @@ label {
   }
 }
 
-body {
+body:not(#nav) {
   min-height: 100vh;
-  display: grid;
-  justify-items: center;
+
   font-family:  'Kanit',system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #252121;
   color: hsl(var(--txt));
+}
+
+.grid-to-do{
+  display: grid;
+ 
+  justify-items: center;
 }
 
 header{
@@ -198,6 +234,10 @@ hr {
   margin-bottom: 1rem;
 }
 
+.todo h1{
+  flex-direction: column;
+}
+
 .wrapper {
   flex: 1 1 100%;
   position: relative;
@@ -272,16 +312,17 @@ position: relative;
   padding-inline: 2vmax;
   display: grid;
   place-items: center;
-  background-color: hsl(var(--bg) / 0.7);
+  background-color: rgba(0,0,0,0.39);
 }
 
 [role="dialog"] .todo {
   max-width: 40ch;
   padding: 2em 1.3em 1.3em;
-  background-color: hsl(var(--bg));
+  background-color: #252121;
   border-radius: var(--_radius);
-  border: 0.1em solid hsl(var(--accent) / 0.3);
-  box-shadow: 0 -1em 3em hsl(var(--muted)), 0 1em 3em hsl(var(--accent) / 0.2);
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
 }
 
 .card{
@@ -297,4 +338,12 @@ position: relative;
 .grey{
   filter: invert(26%) sepia(6%) saturate(790%) hue-rotate(318deg) brightness(84%) contrast(73%);
   box-shadow: none;
+}
+
+.btn-first{
+  z-index: 210;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
