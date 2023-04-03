@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-// library imports
-import { PlusIcon } from '@heroicons/react/24/solid'
+import plus from '../assets/plus-icon.svg'
 
 const CustomForm = ({ addTask }) => {
   const [task, setTask] = useState("");
@@ -33,7 +32,7 @@ const CustomForm = ({ addTask }) => {
         type="submit"
         >
         {/* <PlusIcon /> */}
-        <img className="plus-icon" src="src/assets/plus-icon.svg" alt="add-todo" />
+        <img className="plus-icon" src={plus} alt="add-todo" />
       </button>
     </form>
   )

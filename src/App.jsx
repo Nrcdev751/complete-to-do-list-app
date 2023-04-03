@@ -9,6 +9,9 @@ import EditForm from './components/EditForm'
 import TaskList from './components/TaskList'
 import Navbar from './components/Navbar'
 
+// img
+import note from './assets/header-img.png'
+
 function App() {
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
@@ -63,7 +66,7 @@ function App() {
         <div className="container">
           <header>
             <div className="header-img">
-              <img src="/src/assets/header-img.png" alt="todonote" />
+              <img src={note} alt="todonote" />
             </div>
             <div className="header-info">
               <h1>TO-DO-<span>LIST</span></h1>

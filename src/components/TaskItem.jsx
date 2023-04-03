@@ -1,5 +1,9 @@
 import { useState } from 'react';
 
+// img
+import bin from '../assets/recycle-bin-icon.svg'
+import pen from '../assets/edit-pen-icon.svg'
+
 // styles
 import styles from './TaskItem.module.css';
 
@@ -43,7 +47,7 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
           aria-label={`Update ${task.name} Task `}
           onClick={() => enterEditMode(task)}
         >
-            <img className="grey" src="src/assets/edit-pen-icon.svg" alt="edit-todo" />
+            <img className="grey" src={pen} alt="edit-todo" />
         </button>
 
         <button
@@ -51,7 +55,7 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
           aria-label={`Delete ${task.name} Task`}
           onClick={() => deleteTask(task.id)}
         >
-               <img className="grey" src="src/assets/recycle-bin-icon.svg" alt="del-todo" />
+               <img className="grey" src={bin} alt="del-todo" />
         </button>
 
       </div>
