@@ -22,28 +22,18 @@ const CustomForm = ({ addTask }) => {
       onSubmit={handleFormSubmit}
       >
       <div className="wrapper">
-        <input
-          type="text"
-          id="task"
-          className="input"
-          value={task}
-          onInput={(e) => setTask(e.target.value)}
-          required
-          autoFocus
-          maxLength={60}
-          placeholder="Enter Task"
+        <input type="text" id="task" className="input" value={task} 
+        onInput={(e) => setTask(e.target.value)} required autoFocus maxLength={60} placeholder="Enter Task"
         />
-        <label
-          htmlFor="task"
-          className="label"
-        >Enter Task</label>
+        <label  htmlFor="task"  className="label">กรอกข้อความของท่าน</label>
       </div>
       <button
-        className="btn"
+        className="btn first-btn"
         aria-label="Add Task"
         type="submit"
         >
-        <PlusIcon />
+        {/* <PlusIcon /> */}
+        <img className="plus-icon" src="src/assets/plus-icon.svg" alt="add-todo" />
       </button>
     </form>
   )

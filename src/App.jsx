@@ -19,7 +19,11 @@ function App() {
   }
 
   const deleteTask = (id) => {
-    setTasks(prevState => prevState.filter(t => t.id !== id));
+  
+    if(confirm("คุณต้องการจะลบหรือไม่")){
+      setTasks(prevState => prevState.filter(t => t.id !== id));
+    }
+   
   }
 
   const toggleTask = (id) => {
@@ -53,26 +57,34 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>My Task List</h1>
+        <div className="header-img">
+          <img src="/src/assets/header-img.png" alt="todonote" />
+        </div>
+        <div className="header-info">
+            <h1>TO-DO-<span>LIST</span></h1>
+            <p>เขียนโค๊ด</p>
+        </div>
       </header>
-      {
-        isEditing && (
-          <EditForm
-            editedTask={editedTask}
-            updateTask={updateTask}
-            closeEditMode={closeEditMode}
+      <div className="card">
+        {
+          isEditing && (
+            <EditForm
+              editedTask={editedTask}
+              updateTask={updateTask}
+              closeEditMode={closeEditMode}
+            />
+          )
+        }
+        <CustomForm addTask={addTask}/>
+        {tasks && (
+          <TaskList
+            tasks={tasks}
+            deleteTask={deleteTask}
+            toggleTask={toggleTask}
+            enterEditMode={enterEditMode}
           />
-        )
-      }
-      <CustomForm addTask={addTask}/>
-      {tasks && (
-        <TaskList
-          tasks={tasks}
-          deleteTask={deleteTask}
-          toggleTask={toggleTask}
-          enterEditMode={enterEditMode}
-        />
-      )}
+        )}
+      </div>
     </div>
   )
 }

@@ -33,25 +33,25 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
         >
           {task.name}
           <p className={styles.checkmark}>
-            <CheckIcon strokeWidth={2} width={24} height={24}/>
+            <CheckIcon strokeWidth={2} width={30} height={30}/>
           </p>
         </label>
       </div>
       <div className={styles["task-group"]}>
         <button
-          className='btn'
-          aria-label={`Update ${task.name} Task`}
+          className='btn btn-none'
+          aria-label={`Update ${task.name} Task `}
           onClick={() => enterEditMode(task)}
         >
-          <PencilSquareIcon width={24} height={24} />
+            <img className="grey" src="src/assets/edit-pen-icon.svg" alt="edit-todo" />
         </button>
 
         <button
-          className={`btn ${styles.delete}`}
+          className={`btn btn-none ${styles.delete} `}
           aria-label={`Delete ${task.name} Task`}
           onClick={() => deleteTask(task.id)}
         >
-          <TrashIcon width={24} height={24} />
+               <img className="grey" src="src/assets/recycle-bin-icon.svg" alt="del-todo" />
         </button>
 
       </div>
