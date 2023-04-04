@@ -75,6 +75,17 @@
   background-color: #FFC100;
 }
 
+.grey {
+  filter: invert(26%) sepia(6%) saturate(790%) hue-rotate(318deg) brightness(84%) contrast(73%);
+  box-shadow: none;
+  transition: 0.3s;
+}
+
+.grey:hover {
+  filter: invert(86%) sepia(21%) saturate(6295%) hue-rotate(358deg) brightness(100%) contrast(106%);
+  transform: translateY(-5px);
+}
+
 .checkbox:checked+label {
   text-decoration: line-through;
   color: #FFC100;

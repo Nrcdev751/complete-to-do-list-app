@@ -24,7 +24,7 @@ const CustomForm = ({ addTask }) => {
         <input type="text" id="task" className="input" value={task} 
         onInput={(e) => setTask(e.target.value)} required autoFocus maxLength={60} placeholder="Enter Task"
         />
-        <label  htmlFor="task"  className="label">กรอกข้อความของท่าน</label>
+        <label  htmlFor="task"  className="label">เพิ่มรายการของท่าน</label>
       </div>
       <button
         className="btn first-btn"

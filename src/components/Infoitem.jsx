@@ -19,7 +19,7 @@ const Info = ({open,onClose }) => {
       
   
       
-        <div className="info-wrapper">
+        <div className="info-wrapper ani-pop">
                 <div className="info-title">
                   <img src={infosym} width={35} alt="" />
                   <p>สัญลักษณ์ประกอบการใช้งาน</p>
@@ -27,12 +27,12 @@ const Info = ({open,onClose }) => {
                     <img src={btnx}  alt="" />
                   </button>
                 </div>
-            <div className="info-card">
+            <div className="info-card ani">
               <button  onClick={onClose} className="cross-btn"><img src={btnx} width={15} alt="" /></button>
                 <div className="info-body">
                  <div className="info-gap">
                   <div className="info-item">
-                      <img src={pen} className="grey mt-1" width={15} alt="" />
+                      <img src={pen} className="grey " width={15} alt="" />
                       <p>สัญลักษณ์สำหรับแก้ไขรายการ</p>
                     </div>
                   <hr/>

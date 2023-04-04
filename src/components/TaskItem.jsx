@@ -41,7 +41,7 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
       </div>
       <div className={styles["task-group"]}>
         <button
-          className='btn btn-none'
+          className='btn btn-none grey' 
           aria-label={`Update ${task.name} Task `}
           onClick={() => enterEditMode(task)}
         >
@@ -49,7 +49,7 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
         </button>
 
         <button
-          className={`btn btn-none ${styles.delete} `}
+          className={`btn btn-none grey ${styles.delete} `}
           aria-label={`Delete ${task.name} Task`}
           onClick={() => deleteTask(task.id)}
         >

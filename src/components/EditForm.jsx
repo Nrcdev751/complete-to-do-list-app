@@ -31,7 +31,7 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
       >
       
       <form
-        className="todo"
+        className="todo ani-pop"
         onSubmit={handleFormSubmit}
         >
       

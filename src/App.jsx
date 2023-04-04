@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // custom hooks
 import Modal from 'react-modal';
@@ -20,12 +20,20 @@ import pen from './assets/edit-pen-icon.svg'
 
 function App() {
   const [data, setData] = useState(null);
-  const [openGreet, SetOpenGreet] = useState(true)
+  const [openGreet, SetOpenGreet] = useState(false)
   const [openModal, SetOpenModal] = useState(false)
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      SetOpenGreet(true);
+    }, 1200); // 1000ms delay (1 second)
+    
+    return () => clearTimeout(timer); // clear the timer when the component unmounts
+  }, []);
 
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
@@ -71,7 +79,6 @@ function App() {
     setIsEditing(true);
     setPreviousFocusEl(document.activeElement);
   }
-
   return (
     <>
     <Navbar />
@@ -80,21 +87,21 @@ function App() {
       
     <div className="grid-to-do">
         <div className="container">
-          <header>
+          <header >
             <div className="header-img">
-              <img src={note} alt="todonote" />
+              <img src={note} className="ani-note " alt="todonote" />
             </div>
-            <div className="header-info">
+            <div className="header-info ani-header">
               <h1>TO-DO-<span>LIST</span></h1>
-              <div className="header-title">
+              <div className="header-title ">
               <p>{data}</p>
              <button onClick={() =>  SetOpenGreet(true)}>
-                <img src={pen} className="grey" width={15} alt="" />
+                <img src={pen} className="grey " width={15} alt="" />
              </button>
               </div>
             </div>
           </header>
-          <div className="card">
+          <div className="card ani-pop">
             {isEditing && (
               <EditForm
                 editedTask={editedTask}
@@ -113,11 +120,12 @@ function App() {
             <button  onClick={() => SetOpenModal(true)}>
               <img src={info} className="info grey" width={25} alt="" />
             </button>
+           
+         
+          </div>
             <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
             <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)} setData={setData} />
               
-         
-          </div>
           
         </div>
         

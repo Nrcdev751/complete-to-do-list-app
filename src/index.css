@@ -78,6 +78,7 @@ nav {
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+
 }
 
 
@@ -485,6 +486,12 @@ position: relative;
 .grey{
   filter: invert(26%) sepia(6%) saturate(790%) hue-rotate(318deg) brightness(84%) contrast(73%);
   box-shadow: none;
+  transition: 0.3s;
+}
+
+.grey:hover{
+  filter: invert(86%) sepia(21%) saturate(6295%) hue-rotate(358deg) brightness(100%) contrast(106%);
+  transform: translateY(-5px);
 }
 
 .btn-first{
@@ -493,4 +500,101 @@ position: relative;
 
 textarea:focus, input:focus{
   outline: none;
+}
+
+
+/* Animation */
+
+@keyframes popup {
+  0% {
+    transform: scale(0.3);
+   
+  }
+20%{
+    
+ 
+}
+50%{
+    transform: translateY(20px);
+  
+}
+100% {
+    transform: scale(1);
+    transform: translateY(50px); 
+}
+}
+
+@keyframes note-swing-right {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px) rotate(-200deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0) rotate(0deg);
+	}
+}
+
+@keyframes note-swing-left {
+	0% {
+		opacity: 0;
+		transform: translateX(250px) rotate(200deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0) rotate(0deg);
+	}
+}
+
+@keyframes note-afk {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateY(-8px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateY(8px);
+	}
+
+	80% {
+		transform: translateY(6.4px);
+	}
+
+	90% {
+		transform: translateY(-6.4px);
+	}
+}
+
+
+.ani-pop{
+  animation-name: popup;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.ani-note{
+  animation-name: note-swing-right;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.ani-header{
+  animation-name: note-swing-left;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.ani-afk{
+  animation-name: note-swing-left;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
 }

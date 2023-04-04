@@ -16,7 +16,7 @@ const Greet = ({ openGreet, onCloseGreet, data, setData }) => {
   if (!openGreet) return null;
   return (
     <div role="dialog" aria-labelledby="greetingMenu">
-      <div className="info-wrapper">
+      <div className="info-wrapper ani-pop">
         <div className="greet-card">
           <button className="cross-btn" onClick={onCloseGreet}>
             <img src={btnx} className="grey" width={15} alt="" />
