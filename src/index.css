@@ -603,3 +603,29 @@ textarea:focus, input:focus{
 .ani-afk{
   animation: note-swing-right 1s ease-out, note-afk infinite ease-out;
 }
+
+.footer{
+  background-color: #272424;
+ 
+}
+
+.footer-title {
+  padding-top: 2rem;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-title p:nth-child(1){
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.footer-title p {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  color: #929292;
+}

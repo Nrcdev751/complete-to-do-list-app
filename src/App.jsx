@@ -11,11 +11,13 @@ import TaskList from './components/TaskList'
 import Navbar from './components/Navbar'
 import Infoitem from './components/Infoitem'
 import Greeting from './components/Greeting'
+import Footer from './components/Footer';
 
 // img
 import note from './assets/header-img.png'
 import info from './assets/info-mark.svg'
 import pen from './assets/edit-pen-icon.svg'
+
 
 
 function App() {
@@ -130,6 +132,9 @@ function App() {
         </div>
         
     </div>
+    </section>
+    <section className="footer">
+      <Footer />
     </section>
   
     </>
