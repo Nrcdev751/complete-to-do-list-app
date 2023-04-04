@@ -2,4 +2,7 @@
   display: grid;
   list-style-type: none;
   gap: 1.5em;
+  animation-name: note-check ;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
 }

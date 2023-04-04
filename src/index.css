@@ -394,7 +394,8 @@ hr {
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-position: relative;
+  position: relative;
+ 
 }
 
 .btn-none{
@@ -453,15 +454,7 @@ position: relative;
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
 }
-[role="dialog"] .todo1 {
-  max-width: 40ch;
-  padding: 1em;
-  background-color: #252121;
-  border-radius: var(--_radius);
-  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-}
+
 
 
 
@@ -504,6 +497,21 @@ textarea:focus, input:focus{
 
 
 /* Animation */
+
+
+@keyframes note-check {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
 
 @keyframes popup {
   0% {
@@ -593,8 +601,5 @@ textarea:focus, input:focus{
   animation-fill-mode: both;
 }
 .ani-afk{
-  animation-name: note-swing-left;
-  animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode: both;
+  animation: note-swing-right 1s ease-out, note-afk infinite ease-out;
 }

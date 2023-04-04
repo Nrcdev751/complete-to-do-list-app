@@ -89,7 +89,7 @@ function App() {
         <div className="container">
           <header >
             <div className="header-img">
-              <img src={note} className="ani-note " alt="todonote" />
+              <img src={note} className="ani-afk" alt="todonote" />
             </div>
             <div className="header-info ani-header">
               <h1>TO-DO-<span>LIST</span></h1>

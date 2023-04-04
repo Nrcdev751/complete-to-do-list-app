@@ -10,7 +10,9 @@
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-
+  animation-name: note-check ;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
 }
 
 .task-group {
@@ -86,9 +88,26 @@
   transform: translateY(-5px);
 }
 
+@keyframes note-check {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 .checkbox:checked+label {
   text-decoration: line-through;
   color: #FFC100;
+  animation-name: note-check ;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
 }
 
 .delete {
