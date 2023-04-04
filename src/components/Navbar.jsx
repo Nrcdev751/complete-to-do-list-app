@@ -12,8 +12,8 @@ const Navbar = () => {
                 <img className="" src={navlogo} alt="to-do-logo" />
             </ul>
             <ul className="nav-menu">
-                <li>หน้าแรก</li>
-                <li>เกี่ยวกับ</li>
+                <li><a href="#">หน้าแรก</a></li>
+                <li><a href="#">เกี่ยวกับ</a></li>
             </ul>
      </div>
     </nav>

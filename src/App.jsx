@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 
 // custom hooks
+import Modal from 'react-modal';
 import useLocalStorage from './hooks/useLocalStorage'
 
 // custom components
@@ -8,11 +9,15 @@ import CustomForm from './components/CustomForm'
 import EditForm from './components/EditForm'
 import TaskList from './components/TaskList'
 import Navbar from './components/Navbar'
+import Infoitem from './components/Infoitem'
+
 
 // img
 import note from './assets/header-img.png'
+import info from './assets/info-mark.svg'
 
 function App() {
+  const [openModal, SetOpenModal] = useState(false)
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [editedTask, setEditedTask] = useState(null);
@@ -62,6 +67,8 @@ function App() {
     <>
     <Navbar />
 
+    <section className="to-do-list">
+      
     <div className="grid-to-do">
         <div className="container">
           <header>
@@ -80,6 +87,7 @@ function App() {
                 updateTask={updateTask}
                 closeEditMode={closeEditMode} />
             )}
+      
             <CustomForm addTask={addTask} />
             {tasks && (
               <TaskList
@@ -88,11 +96,19 @@ function App() {
                 toggleTask={toggleTask}
                 enterEditMode={enterEditMode} />
             )}
+            <button  onClick={() => SetOpenModal(true)}>
+              <img src={info} className="info grey" width={25} alt="" />
+            </button>
+            <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
+         
+         
           </div>
+          
         </div>
         
     </div>
-    
+    </section>
+  
     </>
   )
 }

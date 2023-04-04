@@ -9,8 +9,6 @@ import styles from './TaskItem.module.css';
 
 // Library imports
 import { CheckIcon  } from '@heroicons/react/24/outline';
-import { PencilSquareIcon  } from '@heroicons/react/24/outline';
-import { TrashIcon } from '@heroicons/react/24/outline';
 
 const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
   const [isChecked, setIsChecked ] = useState(task.checked);

@@ -9,8 +9,8 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
   useEffect(()=> {
     const closeModalIfEscaped = (e) => {
       e.key === "Escape" && closeEditMode();
+      
     }
-
     window.addEventListener('keydown', closeModalIfEscaped)
 
     return () => {
@@ -46,12 +46,12 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
             required
             autoFocus
             maxLength={60}
-            placeholder="Update Task"
+            placeholder="แก้ไขรายการ"
           />
           <label
             htmlFor="editTask"
             className="label"
-          >Update Task</label>
+          >แก้ไขรายการ</label>
         </div>
         <button
           className="btn first-btn btn-first"
