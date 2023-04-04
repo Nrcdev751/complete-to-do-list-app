@@ -148,6 +148,7 @@ header{
   box-shadow: 0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent) / 0.8);
   transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish);
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  position: relative;
 }
 
 .greet-header span{
@@ -302,6 +303,7 @@ hr {
   content: '';
   filter: invert(1);
   position: absolute;
+  z-index: 200;
 }
 .cross-btn {
   top: -100px;

@@ -32,7 +32,7 @@ const Info = ({open,onClose }) => {
                 <div className="info-body">
                  <div className="info-gap">
                   <div className="info-item">
-                      <img src={pen} className="grey" width={15} alt="" />
+                      <img src={pen} className="grey mt-1" width={15} alt="" />
                       <p>สัญลักษณ์สำหรับแก้ไขรายการ</p>
                     </div>
                   <hr/>

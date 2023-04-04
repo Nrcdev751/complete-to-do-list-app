@@ -19,7 +19,8 @@ import pen from './assets/edit-pen-icon.svg'
 
 
 function App() {
-  const [openGreet, SetOpenGreet] = useState(false)
+  const [data, setData] = useState(null);
+  const [openGreet, SetOpenGreet] = useState(true)
   const [openModal, SetOpenModal] = useState(false)
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
@@ -55,6 +56,11 @@ function App() {
     closeEditMode();
   }
 
+  function getData(val){
+    setData(val.target.value)
+    console.log(val.target.value)
+  }
+
   const closeEditMode = () => {
     setIsEditing(false);
     previousFocusEl.focus();
@@ -81,7 +87,7 @@ function App() {
             <div className="header-info">
               <h1>TO-DO-<span>LIST</span></h1>
               <div className="header-title">
-              <p>เขียนโค๊ด</p>
+              <p>{data}</p>
              <button onClick={() =>  SetOpenGreet(true)}>
                 <img src={pen} className="grey" width={15} alt="" />
              </button>
@@ -108,7 +114,7 @@ function App() {
               <img src={info} className="info grey" width={25} alt="" />
             </button>
             <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
-            <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)}/>
+            <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)} setData={setData} />
               
          
           </div>
