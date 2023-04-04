@@ -8,8 +8,6 @@ import pen from '../assets/edit-pen-icon.svg'
 import bin from '../assets/recycle-bin-icon.svg'
 import plus from '../assets/plus-icon.svg'
 
-// Library imports
-import { CheckIcon  } from '@heroicons/react/24/outline';
 
 const Info = ({open,onClose }) => {
   if (!open) return null
@@ -26,7 +24,7 @@ const Info = ({open,onClose }) => {
                   <img src={infosym} width={35} alt="" />
                   <p>สัญลักษณ์ประกอบการใช้งาน</p>
                   <button onClick={onClose}>
-                    <img src={btnx} alt="" />
+                    <img src={btnx}  alt="" />
                   </button>
                 </div>
             <div className="info-card">

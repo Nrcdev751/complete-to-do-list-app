@@ -142,8 +142,34 @@ header{
   justify-content: center;
 }
 
+.greet-card{
+  background-color: #1d1a1a;
+  padding: 3rem;
+  box-shadow: 0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent) / 0.8);
+  transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish);
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+}
+
+.greet-header span{
+  color: #ebb400;
+}
+
 .header-img img{
   width: 140px;
+}
+
+.header-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title button{
+  padding: 0;
+  border: transparent;
+  background: transparent;
+}
+.header-title button img{
+  align-items: center;
 }
 
 .header-info{
@@ -392,6 +418,13 @@ position: relative;
   transform: scale(0.00001);
 }
 
+.mt-1{
+  margin-top: 1rem;
+}
+
+.dp-none{
+  background-color: transparent;
+}
 
 
 .input::placeholder {
@@ -410,13 +443,24 @@ position: relative;
 
 [role="dialog"] .todo {
   max-width: 40ch;
-  padding: 2em 1.3em 1.3em;
+  padding: 1em 1.3em 1.3em;
   background-color: #252121;
   border-radius: var(--_radius);
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
 }
+[role="dialog"] .todo1 {
+  max-width: 40ch;
+  padding: 1em;
+  background-color: #252121;
+  border-radius: var(--_radius);
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+}
+
+
 
 .card{
   background: rgb(41,41,41);

@@ -10,13 +10,16 @@ import EditForm from './components/EditForm'
 import TaskList from './components/TaskList'
 import Navbar from './components/Navbar'
 import Infoitem from './components/Infoitem'
-
+import Greeting from './components/Greeting'
 
 // img
 import note from './assets/header-img.png'
 import info from './assets/info-mark.svg'
+import pen from './assets/edit-pen-icon.svg'
+
 
 function App() {
+  const [openGreet, SetOpenGreet] = useState(false)
   const [openModal, SetOpenModal] = useState(false)
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
@@ -77,7 +80,12 @@ function App() {
             </div>
             <div className="header-info">
               <h1>TO-DO-<span>LIST</span></h1>
+              <div className="header-title">
               <p>เขียนโค๊ด</p>
+             <button onClick={() =>  SetOpenGreet(true)}>
+                <img src={pen} className="grey" width={15} alt="" />
+             </button>
+              </div>
             </div>
           </header>
           <div className="card">
@@ -100,7 +108,8 @@ function App() {
               <img src={info} className="info grey" width={25} alt="" />
             </button>
             <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
-         
+            <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)}/>
+              
          
           </div>
           
