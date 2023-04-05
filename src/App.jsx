@@ -30,12 +30,15 @@ function App() {
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
+
+  const propCount = Object.keys(tasks).length;
+
   useEffect(() => {
     const timer = setTimeout(() => {
       SetOpenGreet(true);
-    }, 1200); // 1000ms delay (1 second)
+    }, 1200); 
     
-    return () => clearTimeout(timer); // clear the timer when the component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
   const addTask = (task) => {
@@ -126,7 +129,9 @@ function App() {
               <img src={info} className="info grey" width={25} alt="" />
             </button>
            <hr />
-           <p className="mt-1">รายการทั้งสิ้น 1 รายการ</p>
+
+     
+           <p className="mt-1">รายการทั้งสิ้น <span className="yellow">{propCount}</span> รายการ</p>
          
           </div>
             <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>

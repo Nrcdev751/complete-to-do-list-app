@@ -13,6 +13,7 @@
   animation-name: note-check ;
   animation-duration: 0.3s;
   animation-fill-mode: both;
+  
 }
 
 .task-group {
@@ -20,7 +21,6 @@
   align-items: center;
   --taskgroup-gap: .5em;
   gap: var(--taskgroup-gap);
-
 }
 
 .label {
