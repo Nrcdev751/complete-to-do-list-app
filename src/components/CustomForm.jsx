@@ -20,7 +20,7 @@ const CustomForm = ({ addTask }) => {
       className="todo"
       onSubmit={handleFormSubmit}
       >
-      <div className="wrapper">
+      <div className="wrapper" >
         <input type="text" id="task" className="input" value={task} 
         onInput={(e) => setTask(e.target.value)} required autoFocus maxLength={60} placeholder="Enter Task"
         />

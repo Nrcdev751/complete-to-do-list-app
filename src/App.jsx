@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import note from './assets/header-img.png'
 import info from './assets/info-mark.svg'
 import pen from './assets/edit-pen-icon.svg'
+import Profile from './components/Profile';
 
 
 
@@ -81,6 +82,8 @@ function App() {
     setIsEditing(true);
     setPreviousFocusEl(document.activeElement);
   }
+
+  
   return (
     <>
     <Navbar />
@@ -88,7 +91,7 @@ function App() {
     <section className="to-do-list">
       
     <div className="grid-to-do">
-        <div className="container">
+        <div className="container" id="main">
           <header >
             <div className="header-img">
               <img src={note} className="ani-afk" alt="todonote" />
@@ -122,7 +125,8 @@ function App() {
             <button  onClick={() => SetOpenModal(true)}>
               <img src={info} className="info grey" width={25} alt="" />
             </button>
-           
+           <hr />
+           <p className="mt-1">รายการทั้งสิ้น 1 รายการ</p>
          
           </div>
             <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
@@ -133,7 +137,11 @@ function App() {
         
     </div>
     </section>
-    <section className="footer">
+   
+    <section className="profile">
+    <Profile />
+    </section>
+     <section className="footer">
       <Footer />
     </section>
   

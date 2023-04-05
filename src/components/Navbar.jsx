@@ -7,13 +7,13 @@ const Navbar = () => {
   return (
     <section className="navbar" id="nav">
     <nav>
-     <div className="nav-container">
+     <div className="md-container">
      <ul className="nav-logo">
                 <img className="" src={navlogo} alt="to-do-logo" />
             </ul>
             <ul className="nav-menu">
-                <li><a href="#">หน้าแรก</a></li>
-                <li><a href="#">เกี่ยวกับ</a></li>
+                <li><a href="#main">หน้าแรก</a></li>
+                <li><a href="#profile">เกี่ยวกับ</a></li>
             </ul>
      </div>
     </nav>

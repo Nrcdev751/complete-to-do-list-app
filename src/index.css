@@ -7,7 +7,9 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 button {
   font: inherit;
   border: none;
@@ -63,12 +65,18 @@ label {
   color-scheme: dark;
 }
 
-.nav-container{
+.md-container{
   max-width: 1440px;
   margin-inline: auto;
   width: 70%;
   display: flex;
   justify-content: space-between;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 nav {
@@ -78,7 +86,6 @@ nav {
   box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
   -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
-
 }
 
 
@@ -157,7 +164,8 @@ header{
 }
 
 .header-img img{
-  width: 140px;
+  width: 170px;
+  margin-top: 1rem;
 }
 
 .header-title{
@@ -177,11 +185,12 @@ header{
 .header-info{
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 }
 .header-info p{
   display: inline-flex;
   justify-content: flex-start;
-  font-size: 32px;
+  font-size: 4vh;
 }
 
 .header-info h1 span{
@@ -204,6 +213,8 @@ h1 {
   display: grid;
   /* gap: clamp(2rem, 3.5vmax, 8rem); */
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .grid{
@@ -426,6 +437,10 @@ hr {
   margin-top: 1rem;
 }
 
+.ms-1{
+  margin-left: 3rem;
+}
+
 .dp-none{
   background-color: transparent;
 }
@@ -605,7 +620,7 @@ textarea:focus, input:focus{
 }
 
 .footer{
-  background-color: #272424;
+  background-color: #1B1B1B;
  
 }
 
@@ -628,4 +643,151 @@ textarea:focus, input:focus{
   font-size: 20px;
   margin-bottom: 1rem;
   color: #929292;
+  max-width: 630px;
+}
+
+/* --------------- Profile Component ------------ */
+
+.profile{
+  margin-top: 0 !important;
+  background: url(assets/profile/profile-background.png);
+  min-height: 100vh;
+}
+
+.center-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.profile-title p{
+  font-size: 5vh;
+}
+.profile-title p span{
+  color: #FEC101;
+}
+
+.profile-card{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  border-radius: 2rem;
+}
+
+.profile-main{
+  background-color: #1B1919;
+  padding: 1rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile-info{
+  background-color: #242121;
+  padding: 3rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.39);
+}
+
+.profile-pic img{
+  width: 180px;
+  border-radius: 50%;
+}
+
+.profile-about p:nth-child(1) {
+  margin-top: 2rem;
+  font-size: 3vh;
+}
+.profile-about p:nth-child(3) {
+  color: #ebb400;
+  margin-top: 1rem;
+  font-size: 1.5vh;
+}
+.profile-about p:nth-child(4) {
+  max-width: 220px;
+}
+.profile-about a {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-inline: auto;
+}
+
+.profile-info-title{
+  text-align: left;
+  display: flex;
+}
+.profile-info-title p{
+  font-size: 2.7vh;
+  margin-left: 0.5rem;
+}
+
+.profile-info-group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-info-item:nth-child(2){
+  margin-left: 2rem;
+}
+
+.profile-info-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-info-item p{
+  font-size: 3vh;
+  margin-left: 0.5rem;
+}
+
+.profile-info-item a {
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.profile-info-item p:nth-child(3){
+  font-size: 1.8vh;
+  color: #C9C9C9;
+}
+
+.profile-info-item span{
+  color: #C9C9C9;
+  font-size: 1.6vh;
+}
+
+
+
+
+@media screen and (max-width: 575px) {
+  .md-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-card{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .center-wrapper{
+    padding: 0;
+  }
+  
+
+  
+  
 }

@@ -9,6 +9,7 @@ import bin from '../assets/recycle-bin-icon.svg'
 import plus from '../assets/plus-icon.svg'
 
 
+
 const Info = ({open,onClose }) => {
   if (!open) return null
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="nav-container">
+    <div className="md-container">
         <div className="footer-title">
             <p>To Do List Project</p>
             <p>โปรเจคการสร้างหน้าตา UI สำหรับจัดการ To do list โดยใช้ ReactJS</p>
