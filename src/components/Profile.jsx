@@ -89,7 +89,7 @@ const Profile = () => {
                             <p>lmDOW01</p> 
                     </div>
                     <div className="profile-info-item mt-1">
-                          <a  href="nrc-dev.com">  <img src={web} alt="web-icon" width={30} className="grey " /></a>
+                          <a  href="https://nrc-dev.com/">  <img src={web} alt="web-icon" width={30} className="grey " /></a>
                             <p>nrc-dev.com</p> 
                     </div>
                 </div>
