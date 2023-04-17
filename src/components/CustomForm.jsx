@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import plus from '../assets/plus-icon.svg'
+import popsound from '../assets/Pop Bubble Sound Effect 2022.mp3'
 
 const CustomForm = ({ addTask }) => {
   const [task, setTask] = useState("");
@@ -13,6 +14,7 @@ const CustomForm = ({ addTask }) => {
       id: Date.now()
     })
     setTask("")
+    new Audio(popsound).play()
   }
 
   return (
