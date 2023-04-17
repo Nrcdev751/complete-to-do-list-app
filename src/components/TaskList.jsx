@@ -1,23 +1,59 @@
+import { useState } from 'react';
 // component import
 import TaskItem from './TaskItem';
+import { ChevronUpIcon} from '@heroicons/react/24/outline';
+import { ChevronDownIcon} from '@heroicons/react/24/outline';
 
 // styles
 import styles from './TaskList.module.css';
 
+function sortTasksAsc(a, b) {
+  return a.id - b.id;
+}
+
+function sortTasksDsc(a, b) {
+  return b.id - a.id;
+}
+
 const TaskList = ({ tasks, deleteTask, toggleTask, enterEditMode }) => {
+  const [sortOrder, setSortOrder] = useState('dsc'); // initialize state for sorting order
+
+  const sortedTasks = tasks.slice().sort(sortOrder === 'asc' ? sortTasksAsc : sortTasksDsc);
+
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'asc' ? 'dsc' : 'asc');
+  }
   return (
-    <ul className={styles.tasks}>
-      {tasks.sort((a, b) => b.id - a.id).map(task => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          deleteTask={deleteTask}
-          toggleTask={toggleTask}
-          enterEditMode={enterEditMode}
-        />
-      ))
-      }
-    </ul>
+   <>
+     <span onClick={toggleSortOrder}>
+        {sortOrder === 'asc' ?
+          <div className="icon-right">   
+          <ChevronUpIcon width={25}/>
+          </div>
+      
+         :
+        
+         <div className="icon-right">
+            <ChevronDownIcon width={25} />
+         </div>
+          }
+      </span>
+      <ul className={styles.tasks}>
+        
+      {sortedTasks.map(task => (
+  
+           <TaskItem
+            key={task.id}
+            task={task}
+            deleteTask={deleteTask}
+            toggleTask={toggleTask}
+            enterEditMode={enterEditMode}
+          />
+     
+       
+      ))}
+          </ul>
+   </>
   )
 }
 export default TaskList

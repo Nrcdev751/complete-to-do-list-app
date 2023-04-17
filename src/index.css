@@ -436,6 +436,14 @@ hr {
   padding: 0;
 }
 
+.icon-right{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.1rem;
+  margin-top: 1.1rem;
+  cursor: pointer;
+}
+
 /* .input:focus {
   outline: none;
   box-shadow: 0 0 0 0.2em hsl(var(--bg)), 0 0 0 0.4em hsl(var(--accent) / 0.8);
