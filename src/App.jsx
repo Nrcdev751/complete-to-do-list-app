@@ -1,7 +1,12 @@
+// library
+import Swal from 'sweetalert2';
+
 import React, { useState, useEffect } from 'react'
 
+
+
 // custom hooks
-import Modal from 'react-modal';
+
 import useLocalStorage from './hooks/useLocalStorage'
 
 // custom components
@@ -39,18 +44,33 @@ function App() {
     }, 1200); 
     
     return () => clearTimeout(timer);
-  }, []);
+    }, []);
 
   const addTask = (task) => {
     setTasks(prevState => [...prevState, task])
   }
 
   const deleteTask = (id) => {
-  
-    if(confirm("คุณต้องการจะลบหรือไม่")){
-      setTasks(prevState => prevState.filter(t => t.id !== id));
-    }
-   
+    Swal.fire({
+      title: 'คุณแน่ใจว่าจะลบรายการนี้?',
+      text: "หากลบแล้วจะไม่สามารถย้อนกลับมาได้อีก !!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setTasks(prevState => prevState.filter(t => t.id !== id));
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+          
+        )
+      }
+    })
+
   }
 
   const toggleTask = (id) => {
@@ -77,6 +97,8 @@ function App() {
 
   const closeEditMode = () => {
     setIsEditing(false);
+    SetOpenModal(false);
+    SetOpenGreet(false);
     previousFocusEl.focus();
   }
 
@@ -134,8 +156,15 @@ function App() {
            <p className="mt-1">รายการทั้งสิ้น <span className="yellow">{propCount}</span> รายการ</p>
          
           </div>
-            <Infoitem open={openModal} onClose={() => SetOpenModal(false)}/>
-            <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)} setData={setData} />
+            <Infoitem 
+            open={openModal} 
+            onClose={() => SetOpenModal(false)}
+            closeEditMode={closeEditMode}
+            SetOpenModal={SetOpenModal}
+            />
+            <Greeting openGreet={openGreet} onCloseGreet={() => SetOpenGreet(false)}
+            closeEditMode={closeEditMode}
+            setData={setData} />
               
           
         </div>

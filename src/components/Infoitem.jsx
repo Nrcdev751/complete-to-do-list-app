@@ -10,12 +10,13 @@ import plus from '../assets/plus-icon.svg'
 
 
 
-const Info = ({open,onClose }) => {
+const Info = ({open,onClose,closeEditMode }) => {
   if (!open) return null
   return (
     <div
       role="dialog"
       aria-labelledby="editTask"
+      onClick={(e) => {e.target == e.currentTarget && closeEditMode()}}
       >
       
   

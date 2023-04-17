@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import plus from '../assets/plus-icon.svg';
 import btnx from '../assets/x-icon.svg';
 
-const Greet = ({ openGreet, onCloseGreet, data, setData }) => {
+const Greet = ({ openGreet, onCloseGreet ,closeEditMode, data, setData }) => {
   const handleInputChange = (event) => {
     setData(event.target.value);
     console.log(event.target.value);
@@ -15,7 +15,8 @@ const Greet = ({ openGreet, onCloseGreet, data, setData }) => {
 
   if (!openGreet) return null;
   return (
-    <div role="dialog" aria-labelledby="greetingMenu">
+    <div role="dialog" aria-labelledby="greetingMenu"
+    onClick={(e) => {e.target == e.currentTarget && closeEditMode()}}>
       <div className="info-wrapper ani-pop">
         <div className="greet-card">
           <button className="cross-btn" onClick={onCloseGreet}>
