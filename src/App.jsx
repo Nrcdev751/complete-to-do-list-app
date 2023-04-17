@@ -56,15 +56,15 @@ function App() {
       text: "หากลบแล้วจะไม่สามารถย้อนกลับมาได้อีก !!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: '#FFC100',
+      cancelButtonColor: '#201F1F',
+      confirmButtonText: 'ใช่ฉันต้องการลบมัน !!'
     }).then((result) => {
       if (result.isConfirmed) {
         setTasks(prevState => prevState.filter(t => t.id !== id));
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          'ลบรายการเรียบร้อย !!',
+          'รายการของคุณได้หายไปเรียบร้อย',
           'success'
           
         )
