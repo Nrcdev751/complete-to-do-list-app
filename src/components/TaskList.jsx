@@ -15,7 +15,7 @@ function sortTasksDsc(a, b) {
   return b.id - a.id;
 }
 
-const TaskList = ({ tasks, deleteTask, toggleTask, enterEditMode }) => {
+const TaskList = ({ tasks, deleteTask, toggleTask, enterEditMode, propCount }) => {
   const [sortOrder, setSortOrder] = useState('dsc'); // initialize state for sorting order
 
   const sortedTasks = tasks.slice().sort(sortOrder === 'asc' ? sortTasksAsc : sortTasksDsc);
@@ -25,7 +25,8 @@ const TaskList = ({ tasks, deleteTask, toggleTask, enterEditMode }) => {
   }
   return (
    <>
-     <span onClick={toggleSortOrder}>
+    {propCount > 0 && (
+      <span onClick={toggleSortOrder}>
         {sortOrder === 'asc' ?
           <div className="icon-right">   
           <ChevronUpIcon width={25}/>
@@ -38,6 +39,8 @@ const TaskList = ({ tasks, deleteTask, toggleTask, enterEditMode }) => {
          </div>
           }
       </span>
+    )}
+     
       <ul className={styles.tasks}>
         
       {sortedTasks.map(task => (

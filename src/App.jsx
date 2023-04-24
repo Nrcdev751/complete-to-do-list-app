@@ -145,7 +145,9 @@ function App() {
                 tasks={tasks}
                 deleteTask={deleteTask}
                 toggleTask={toggleTask}
-                enterEditMode={enterEditMode} />
+                enterEditMode={enterEditMode}
+                propCount={propCount}
+                 />
             )}
             <button  onClick={() => SetOpenModal(true)}>
               <img src={info} className="info grey" width={25} alt="" />
